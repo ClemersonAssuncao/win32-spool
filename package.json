@@ -1,0 +1,19 @@
+{
+  "name": "win32-spool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && node dist/index.js"
+  },
+  "dependencies": {
+    "koffi": "^2.9.0",
+    "typescript": "^5.6.2"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.5.5"
+  }
+}
