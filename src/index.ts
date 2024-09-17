@@ -11,10 +11,10 @@ koffi.struct('DOC_INFO_1', {
 });
 
 // Define functions
-const OpenPrinter = winspool.func('bool OpenPrinterW(str16, _Out_ uint64_t*, void*)');
-const StartDocPrinter = winspool.func('int StartDocPrinterW(uint64_t, int, DOC_INFO_1*)');
-const WritePrinter = winspool.func('int WritePrinter(uint64_t, char16_t*, int, _Out_ uint32_t*)');
-const ClosePrinter = winspool.func('int ClosePrinter(uint64_t)');
+const OpenPrinter = winspool.func('OpenPrinterW','bool',['str16', '_Out_ uint64_t*', 'void*']);
+const StartDocPrinter = winspool.func('StartDocPrinterW', 'int', ['uint64_t', 'int', 'DOC_INFO_1*']);
+const WritePrinter = winspool.func('WritePrinter','int',['uint64_t', 'char16_t*', 'int', '_Out_ uint32_t*']);
+const ClosePrinter = winspool.func('ClosePrinter','int', ['uint64_t']);
 
 // Use the functions
 async function imprimirRelatorio(printerName: string, conteudo: string) {
@@ -54,6 +54,6 @@ async function imprimirRelatorio(printerName: string, conteudo: string) {
   ClosePrinter(printerHandle.readBigUInt64LE());
 }
 
-for (let i=0; i <= 700; i++) {
+for (let i=0; i < 1; i++) {
     imprimirRelatorio('Betaprinter', 'teste conteudo');
 }
